@@ -19,12 +19,12 @@ module.exports = {
     // Check if there is a user with the same email
     const foundUserWithSameEmail = await User.findOne({ email });
     if (foundUserWithSameEmail) { 
-      return res.status(403).json({ error: 'Email is already in use'});
+      return res.status(409).json({ error: 'Email is already in use'});
     }
 
     const foundUserWithSameUsername = await User.findOne({ username });
     if (foundUserWithSameUsername) { 
-      return res.status(403).json({ error: 'username is already in use'});
+      return res.status(409).json({ error: 'username is already in use'});
     }
 
     // Create a new user

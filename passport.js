@@ -37,7 +37,7 @@ passport.use(new LocalStrategy({
       
       // If not, handle it
       if (!user) {
-        return done(null, false,  { message: 'Incorrect Email' });
+        return done('Incorrect email', false,  { message: 'Incorrect Email' });
       }
     
       // Check if the password is correct

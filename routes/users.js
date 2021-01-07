@@ -7,7 +7,7 @@ const passportConf = require('../passport');
 const UsersController = require('../controllers/users');
 const { validateBody, schemas } = require('../helpers/routeHelpers');
 const passportSignin = passport.authenticate('local', {session : false });
-const passportJWT = passport.authenticate('jwt', { failureRedirect : 'home', session: false}) ;
+const passportJWT = passport.authenticate('jwt', {  session: false}) ;
 
 
 router.route('/signup')
